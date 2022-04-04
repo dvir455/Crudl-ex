@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  </head>
+  <body onload="init()">
+    <header><h1>Welcome to my 📚 shop</h1></header>
+    <button class="add-btn" onclick="onCreateBook()">Add a new book</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+     
+      </tbody>
+    </table>
+    <div class="info-modal">
+      <div class="info-container"></div>
+      <!-- <button onclick="onRatingUpdate(this.id, false)">➖</button><span class="book-rating"></span><button onclick="onRatingUpdate(this.id, true)">➕</button> -->
+    </div>
+    <div class="user-msg"></div>
+    <script src="/js/utils.js"></script>
+    <script src="/js/services/storage.service.js"></script>
+    <script src="/js/books.controller.js"></script>
+    <script src="/js/services/books.services.js"></script>
+  </body>
+</html>

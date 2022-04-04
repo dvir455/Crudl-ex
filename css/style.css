@@ -1,0 +1,118 @@
+body {
+  background-color: whitesmoke;
+  font-family: 'Bebas Neue', cursive;
+}
+header {
+  text-align: center;
+}
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: 0.5em 0 0.75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 0.35em;
+}
+
+table th,
+table td {
+  padding: 0.625em;
+  text-align: center;
+}
+
+table th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.add-btn {
+  border: 0px;
+  background-color: rgb(204, 204, 204);
+  border-radius: 0.5rem;
+  margin-bottom: 5px;
+}
+.add-btn:hover {
+  color: deeppink;
+  cursor: pointer;
+}
+.user-msg {
+  position: fixed;
+  bottom: -100px;
+  right: 10px;
+  background-color: rgb(116, 116, 116);
+  padding: 10px;
+  border-radius: 2rem;
+  color: white;
+}
+.user-msg.open {
+  bottom: 10px;
+  transition: bottom 0.5s;
+}
+
+.book-action {
+  border: 0px;
+  border-radius: 0.2em;
+  padding: 5px;
+  margin: 0 5px;
+}
+
+.book-action:hover {
+  color: deeppink;
+  cursor: pointer;
+}
+
+.info-modal {
+  position: fixed;
+  right: -150%;
+  background-color: #c0c0c0;
+  height: 400px;
+  width: 300px;
+  text-align: center;
+}
+.info-modal img {
+  height: 250px;
+}
+
+.book-name {
+  color: rgb(53, 53, 53);
+  font-weight: bolder;
+  font-size: 1.5em;
+  text-decoration: overline;
+}
+.book-price {
+  color: rgb(53, 53, 53);
+}
+.book-price .price {
+  font-weight: bolder;
+  text-decoration: underline;
+}
+.modal-open{
+  right: 10px;
+  transition: right .5s ;
+}
+
+.wrong-rating{
+  color: rgb(53, 53, 53);
+  animation-name: blip;
+  animation-duration: 1s;
+}
+
+@keyframes blip {
+0% {color: rgb(53, 53, 53)}
+50% {color: red}
+100% {color: rgb(53, 53, 53)}
+
+
+}
