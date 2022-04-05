@@ -116,3 +116,7 @@ table th {
 
 
 }
+
+.rtl {
+  direction: rtl;
+}

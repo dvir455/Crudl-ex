@@ -12,10 +12,18 @@ function renderBooks() {
       `<tr>
       <td>${book.id}</td>
       <td>${book.name}</td>
-      <td>${book.price} USD</td>
-      <td><button class="book-action" onclick="onReadBook('${book.id}')">Read</button>
-       <button class="book-action" onclick="onBookUpdate('${book.id}')">Update</button> 
-       <button class="book-action" onclick="onBookDelete('${book.id}')">Delete</button></td>
+      <td>${formatCurrency(
+        getCurrLang() === 'he' ? usdToIls(book.price) : book.price
+      )}</td>
+      <td><button class="book-action" onclick="onReadBook('${
+        book.id
+      }')" data-trans='readBtn' >Read</button>
+       <button class="book-action" onclick="onBookUpdate('${
+         book.id
+       }')" data-trans='updateBtn' >Update</button> 
+       <button class="book-action" onclick="onBookDelete('${
+         book.id
+       }')" data-trans='delBtn' >Delete</button></td>
     
       
     </tr>`
@@ -30,6 +38,7 @@ function onCreateBook() {
   const book = addBook(bookTitle, bookPrice, bookImg);
   renderBooks();
   flashMsg(`Book Added (id: ${book.id})`);
+  makeTrans();
 }
 
 function onReadBook(bookId) {
@@ -72,6 +81,7 @@ function onBookUpdate(bookId) {
   var img = prompt('Enter a new img(url)', book.imgUrl);
   updateBook(bookId, price, name, img);
   renderBooks();
+  makeTrans();
 }
 function onBookDelete(bookId) {
   deleteBook(bookId);
@@ -85,4 +95,18 @@ function flashMsg(msg) {
   setTimeout(() => {
     el.classList.remove('open');
   }, 3000);
+}
+
+function onSetLang(lang) {
+  setLang(lang);
+
+  if (lang === 'he') document.body.classList.add('rtl');
+  else document.body.classList.remove('rtl');
+
+  makeTrans();
+  renderBooks();
+}
+
+function usdToIls(price) {
+  return price * 3.2;
 }

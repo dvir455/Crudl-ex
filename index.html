@@ -5,35 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body onload="init()">
-    <header><h1>Welcome to my 📚 shop</h1></header>
-    <button class="add-btn" onclick="onCreateBook()">Add a new book</button>
+    <header><h1 data-trans="mainTitle">Welcome to my 📚 shop</h1></header>
+    <button data-trans="addBtn" class="add-btn" onclick="onCreateBook()">
+      Add a new book
+    </button>
+    <div class="lang-selector">
+      <label data-trans="langLabel" for="cars">Pick a Language:</label>
+
+      <select name="cars" id="cars" onchange="onSetLang(this.value)">
+        <option value="en">English</option>
+        <option value="he">עברית</option>
+      </select>
+    </div>
     <table>
       <thead>
         <tr>
-          <th>Id</th>
-          <th>Title</th>
-          <th>Price</th>
-          <th>Actions</th>
+          <th data-trans="id">Id</th>
+          <th data-trans="title">Title</th>
+          <th data-trans="price">Price</th>
+          <th data-trans="actions">Actions</th>
         </tr>
       </thead>
-      <tbody>
-     
-      </tbody>
+      <tbody></tbody>
     </table>
     <div class="info-modal">
       <div class="info-container"></div>
-      <!-- <button onclick="onRatingUpdate(this.id, false)">➖</button><span class="book-rating"></span><button onclick="onRatingUpdate(this.id, true)">➕</button> -->
     </div>
     <div class="user-msg"></div>
     <script src="/js/utils.js"></script>
+    <script src="/packs/i18next.min.js"></script>
     <script src="/js/services/storage.service.js"></script>
     <script src="/js/books.controller.js"></script>
     <script src="/js/services/books.services.js"></script>
+    <script src="/js/services/i18n.service.js"></script>
   </body>
 </html>
